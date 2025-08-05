@@ -1,96 +1,277 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LegacyFinance - Organize sua Vida Financeira</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegacyFinance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #10B981;
+      --secondary: #3B82F6;
+      --neutral-dark: #1E1E1E;
+      --neutral-medium: #4B5563;
+      --neutral-light: #6B7280;
+      --bg: #F0FDF4;
+      --highlight: #E0F2FE;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--neutral-dark);
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--neutral-dark);
+    }
+    .logo span {
+      color: var(--primary);
+    }
+    .slogan {
+      font-size: 1rem;
+      color: var(--neutral-light);
+      margin-top: -10px;
+      margin-bottom: 2rem;
+    }
+    .headline {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--neutral-dark);
+    }
+    .subheadline {
+      font-size: 1.1rem;
+      color: var(--neutral-medium);
+      max-width: 600px;
+    }
+    .cta {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+    .features, .steps, .plans, .guarantee, .faq {
+      width: 100%;
+    }
+    .features h2, .steps h2, .plans h2, .faq h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .features p, .faq p {
+      font-size: 1rem;
+      color: var(--neutral-medium);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .card {
+      background: var(--highlight);
+      border: 1px solid #93C5FD;
+      border-radius: 12px;
+      padding: 1.5rem;
+      flex: 1 1 260px;
+      max-width: 320px;
+      text-align: left;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: var(--neutral-light);
+    }
+    .steps .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .step-number {
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .guarantee {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+    .guarantee img {
+      width: 150px;
+    }
+    .faq details {
+      background: white;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      padding: 1rem;
+    }
+    .faq summary {
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .faq p {
+      margin-top: 0.5rem;
+      text-align: left;
+    }
+    .plan-tier {
+      background: white;
+      border: 2px solid var(--primary);
+      border-radius: 1rem;
+      padding: 2rem;
+      flex: 1;
+      min-width: 280px;
+      max-width: 350px;
+      text-align: center;
+    }
+    .plan-tier h3 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .plan-tier .price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+    .plan-tier ul {
+      list-style: none;
+      padding: 0;
+      color: var(--neutral-medium);
+      margin-bottom: 1.5rem;
+    }
+    .plan-tier ul li {
+      margin: 0.5rem 0;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
-  <header class="bg-blue-800 text-white text-center p-6">
-    <h1 class="text-3xl font-bold">A gente te ajuda a reorganizar sua vida financeira</h1>
-    <p class="mt-2">Sem fórmulas mágicas, sem julgamentos. Você só paga aquilo que conseguir economizar.</p>
-    <p class="mt-1 font-semibold text-green-300">Comece com apenas R$50/mês.</p>
-    <a href="https://form.jotform.com/252165158107050" class="mt-4 inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
-      Falar com o Isaac – Diagnóstico Gratuito
-    </a>
-    <p class="mt-1 text-sm">Leva menos de 3 minutos. Sem cobrança. Sem pegadinha.</p>
-  </header>
+<body>
+  <div class="container">
+    <div class="logo">LEGACY<span>FINANCE</span></div>
+    <div class="slogan">Saúde financeira com leveza</div>
 
-  <section class="max-w-4xl mx-auto p-6">
-    <h2 class="text-2xl font-bold mb-4">Como Funciona</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-        <h3 class="font-bold">1. Diagnóstico gratuito</h3>
-        <p>Você preenche nosso formulário simples e recebe uma projeção da sua economia potencial.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">2. Proposta personalizada</h3>
-        <p>Plano com metas, cortes de gastos e reestruturação de dívidas.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">3. Acompanhamento mensal</h3>
-        <p>Revisão do plano e apoio contínuo para sua jornada.</p>
-      </div>
-      <div>
-        <h3 class="font-bold">4. Assinatura flexível</h3>
-        <p>Você só paga dentro do que consegue economizar. Começa a partir de R$50/mês.</p>
-      </div>
-    </div>
-  </section>
+    <div class="headline">Organize sua vida financeira sem peso</div>
+    <div class="subheadline">Comece com um diagnóstico gratuito, veja quanto pode economizar e conte com apoio mensal para conquistar paz nas finanças.</div>
+    <a href="https://form.jotform.com/252165158107050" class="cta">Quero minha organização gratuita</a>
 
-  <section class="bg-gray-100 p-6">
-    <h2 class="text-2xl font-bold mb-4">Exemplos Reais</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="bg-white shadow-md p-4 rounded">
-        <p><strong>Carlos</strong><br>35 anos, casado, 2 filhos. Pagava R$2.100/mês em dívidas.<br><strong>Economia após consultoria:</strong> R$700/mês<br><strong>Plano:</strong> R$100/mês</p>
+    <section class="features">
+      <h2>O que fazemos</h2>
+      <p>Somos especialistas em organização e alívio financeiro. Entregamos um diagnóstico gratuito, com projeções reais de economia, plano de reestruturação e acompanhamento humano e acessível.</p>
+      <div class="cards">
+        <div class="card"><h3>Diagnóstico gratuito</h3><p>Mostramos onde o dinheiro está sendo perdido.</p></div>
+        <div class="card"><h3>Plano personalizado</h3><p>Metas práticas, renegociações e cortes inteligentes.</p></div>
+        <div class="card"><h3>Assinatura flexível</h3><p>Você só paga com base no que economizar.</p></div>
+        <div class="card"><h3>Acompanhamento mensal</h3><p>Consultoria leve, com apoio real e acessível.</p></div>
+        <div class="card"><h3>Educação e crédito</h3><p>Reconstrução de crédito e hábitos financeiros.</p></div>
       </div>
-      <div class="bg-white shadow-md p-4 rounded">
-        <p><strong>Joana</strong><br>28 anos, autônoma. Gastava sem controle.<br><strong>Economia após consultoria:</strong> R$250/mês<br><strong>Plano:</strong> R$75/mês</p>
+    </section>
+
+    <section class="steps">
+      <h2>Como Funciona</h2>
+      <div class="step"><div class="step-number">1</div><div class="step-content"><h3>Diagnóstico gratuito</h3><p>Preencha o formulário e veja quanto pode economizar.</p></div></div>
+      <div class="step"><div class="step-number">2</div><div class="step-content"><h3>Proposta personalizada</h3><p>Plano de reestruturação com base em sua realidade.</p></div></div>
+      <div class="step"><div class="step-number">3</div><div class="step-content"><h3>Consultoria mensal</h3><p>Acompanhamento para manter o foco e ajustar rumos.</p></div></div>
+      <div class="step"><div class="step-number">4</div><div class="step-content"><h3>Assinatura leve</h3><p>A partir de R$49/mês. Só paga se economizar.</p></div></div>
+    </section>
+
+    <section class="plans">
+      <h2>Planos de Assinatura</h2>
+      <div class="cards">
+        <div class="plan-tier">
+          <h3>Plano Essencial</h3>
+          <p class="price">R$49,90/mês</p>
+          <ul>
+            <li>Diagnóstico financeiro completo</li>
+            <li>Plano de reestruturação</li>
+            <li>Consultoria leve por e-mail</li>
+          </ul>
+          <a href="#" class="cta">Assinar</a>
+        </div>
+        <div class="plan-tier">
+          <h3>Plano Plus</h3>
+          <p class="price">R$97,00/mês</p>
+          <ul>
+            <li>Tudo do Essencial</li>
+            <li>Consultoria mensal por WhatsApp</li>
+            <li>Acompanhamento de metas</li>
+          </ul>
+          <a href="#" class="cta">Assinar</a>
+        </div>
+        <div class="plan-tier">
+          <h3>Plano Premium</h3>
+          <p class="price">R$297,00/mês</p>
+          <ul>
+            <li>Tudo do Plus</li>
+            <li>Atendimento individual com especialista</li>
+            <li>Reestruturação completa e acesso prioritário</li>
+          </ul>
+          <a href="#" class="cta">Assinar</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="max-w-2xl mx-auto p-6">
-    <h2 class="text-2xl font-bold mb-4">Plano de Assinatura</h2>
-    <table class="w-full text-left border-collapse">
-      <thead>
-        <tr>
-          <th class="border-b p-2">Economia Estimada</th>
-          <th class="border-b p-2">Valor Mensal</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="border-b p-2">até R$100</td>
-          <td class="border-b p-2">R$50</td>
-        </tr>
-        <tr>
-          <td class="border-b p-2">de R$101 a R$300</td>
-          <td class="border-b p-2">R$75</td>
-        </tr>
-        <tr>
-          <td class="p-2">acima de R$300</td>
-          <td class="p-2">R$100</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+    <section class="guarantee">
+      <img src="garantia7dias.png" alt="Garantia de 7 dias">
+      <div class="guarantee-text">
+        <h3>Garantia de 7 dias</h3>
+        <p>Teste a LegacyFinance sem compromisso. Se não gostar ou não servir para você, devolvemos o valor.</p>
+        <a href="https://form.jotform.com/252165158107050" class="cta">Começar agora sem risco</a>
+      </div>
+    </section>
 
-  <section class="bg-blue-50 p-6">
-    <h2 class="text-2xl font-bold mb-4">Diferenciais</h2>
-    <ul class="list-disc pl-6">
-      <li>Atendimento humano e empático</li>
-      <li>Plano 100% personalizado</li>
-      <li>Você só paga se economizar</li>
-      <li>Sem fidelidade, sem burocracia</li>
-      <li>Integração com planejamento patrimonial e testamento</li>
-    </ul>
-  </section>
-
-  <footer class="text-center text-sm text-gray-500 p-4">
-    © 2025 LegacyFinance. Todos os direitos reservados.
-  </footer>
+    <section class="faq">
+      <h2>Perguntas Frequentes</h2>
+      <p>Esclareça suas dúvidas antes de começar.</p>
+      <details><summary>O diagnóstico realmente não tem custo?</summary><p>Sim. Você preenche o formulário e recebe a análise inicial de forma 100% gratuita.</p></details>
+      <details><summary>Preciso pagar mesmo sem economizar?</summary><p>Não. Só cobramos se houver economia real. E o valor começa em R$49/mês.</p></details>
+      <details><summary>Vocês ajudam a renegociar minhas dívidas?</summary><p>Sim. Nossa consultoria inclui estratégias de renegociação e reconstrução do seu crédito.</p></details>
+      <details><summary>Qual o nível de personalização?</summary><p>Total. A proposta é feita com base nas suas metas, renda, despesas e contexto atual.</p></details>
+    </section>
+  </div>
 </body>
 </html>
+
