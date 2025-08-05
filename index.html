@@ -31,12 +31,13 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 1.2rem;
     }
     .logo {
       font-size: 2.2rem;
       font-weight: 800;
       color: var(--neutral-dark);
+      margin-bottom: 0.5rem;
     }
     .logo span {
       color: var(--primary);
@@ -44,42 +45,56 @@
     .slogan {
       font-size: 1rem;
       color: var(--neutral-light);
-      margin-top: -10px;
-      margin-bottom: 2rem;
+      margin: 0.4rem 0 0.6rem 0;;
     }
     .headline {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       font-weight: 700;
       color: var(--neutral-dark);
+      margin-bottom: 0.6rem;
+      margin-top: 2rem;
+      line-height: 1.2;
     }
     .subheadline {
       font-size: 1.1rem;
       color: var(--neutral-medium);
-      max-width: 600px;
+      max-width: auto;
+      margin-bottom: 0.8rem;
+      margin-top: 0;
     }
     .cta {
-      background: linear-gradient(to right, var(--primary), var(--secondary));
-      color: white;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-      margin-top: 1.5rem;
+      background: linear-gradient(to right, #10B981, #3B82F6);
+    color: white;
+    padding: 0.6rem 1.1rem; /* Botão mais compacto */
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 0.4rem;
+    margin-bottom: 0.8rem;
+    min-width: unset;
+    width: auto;
+      max-width: 100%;
+      box-sizing: border-box;
+      transition: background 0.3s, transform 0.2s;
     }
-    .features, .steps, .plans, .guarantee, .faq {
+    .cta:hover {
+      background: linear-gradient(to right, var(--secondary), var(--primary));
+      transform: translateY(-2px) scale(1.04);
+    }
+    section {
       width: 100%;
     }
-    .features h2, .steps h2, .plans h2, .faq h2 {
+    h2 {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 1rem;
       text-align: center;
     }
-    .features p, .faq p {
+    p.section-description {
       font-size: 1rem;
       color: var(--neutral-medium);
       text-align: center;
@@ -99,6 +114,7 @@
       flex: 1 1 260px;
       max-width: 320px;
       text-align: left;
+      min-width: 220px;
     }
     .card h3 {
       font-size: 1.1rem;
@@ -107,14 +123,46 @@
       color: var(--primary);
     }
     .card p {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--neutral-light);
+    }
+    .counter-numbers {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .counter-item {
+      background: white;
+      border: 1px solid #E5E7EB;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      flex: 1;
+      min-width: 200px;
+      max-width: 300px;
+    }
+    .counter-item h3 {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    .counter-item p {
+      color: var(--neutral-medium);
+    }
+    .steps {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
     .steps .step {
       display: flex;
       align-items: flex-start;
       gap: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .step-number {
       background: var(--primary);
@@ -126,11 +174,55 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 3px;
     }
     .step-content h3 {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.18rem;
+      color: var(--neutral-dark);
+    }
+    .step-content p {
+      font-size: 0.99rem;
+      color: var(--neutral-medium);
+    }
+    .plans {
+      margin-top: 2rem;
+    }
+    .plans .cards {
+      margin-top: 1.3rem;
+    }
+    .plan-tier {
+      background: white;
+      border: 2px solid var(--primary);
+      border-radius: 1rem;
+      padding: 2rem;
+      flex: 1;
+      min-width: 270px;
+      max-width: 350px;
+      text-align: center;
+    }
+    .plan-tier h3 {
+      font-size: 1.23rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .plan-tier .price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      color: var(--neutral-dark);
+    }
+    .plan-tier ul {
+      list-style: none;
+      padding: 0;
+      color: var(--neutral-medium);
+      margin-bottom: 1.5rem;
+    }
+    .plan-tier ul li {
+      margin: 0.5rem 0;
     }
     .guarantee {
       display: flex;
@@ -139,9 +231,25 @@
       background: white;
       padding: 2rem;
       border-radius: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
     }
     .guarantee img {
-      width: 150px;
+      width: 110px;
+    }
+    .guarantee-text h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .guarantee-text p {
+      font-size: 1rem;
+      color: var(--neutral-medium);
+      margin-bottom: 1rem;
+    }
+    .faq {
+      margin-top: 2.5rem;
     }
     .faq details {
       background: white;
@@ -153,54 +261,50 @@
     .faq summary {
       font-weight: 600;
       cursor: pointer;
+      color: var(--primary);
+      outline: none;
     }
     .faq p {
       margin-top: 0.5rem;
       text-align: left;
-    }
-    .plan-tier {
-      background: white;
-      border: 2px solid var(--primary);
-      border-radius: 1rem;
-      padding: 2rem;
-      flex: 1;
-      min-width: 280px;
-      max-width: 350px;
-      text-align: center;
-    }
-    .plan-tier h3 {
-      font-size: 1.4rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    .plan-tier .price {
-      font-size: 2rem;
-      font-weight: bold;
-      margin: 1rem 0;
-    }
-    .plan-tier ul {
-      list-style: none;
-      padding: 0;
       color: var(--neutral-medium);
-      margin-bottom: 1.5rem;
     }
-    .plan-tier ul li {
-      margin: 0.5rem 0;
+    @media (max-width: 800px) {
+      .cards, .counter-numbers {
+        flex-direction: column;
+        align-items: center;
+      }
+      .steps .step {
+        max-width: 98vw;
+      }
+      .container {
+        padding: 1rem;
+      }
+    }
+    @media (max-width: 500px) {
+      body { padding: 0.2rem; }
+      .container { padding: 0.2rem; }
+      .headline { font-size: 1.45rem; }
+      .logo { font-size: 1.4rem; }
+      .cta { font-size: 1rem; padding: 0.6rem 1rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- Topo -->
     <div class="logo">LEGACY<span>FINANCE</span></div>
-    <div class="slogan">Saúde financeira com leveza</div>
-
-    <div class="headline">Organize sua vida financeira sem peso</div>
-    <div class="subheadline">Comece com um diagnóstico gratuito, veja quanto pode economizar e conte com apoio mensal para conquistar paz nas finanças.</div>
+    <div class="slogan">saúde financeira, paz familiar</div>
+    <div class="headline">Reorganize sua vida financeira<br> com a ajuda certa</div>
+    <div class="subheadline">
+      Diagnóstico gratuito e acompanhamento personalizado para você sair do vermelho, organizar suas contas e investir no que importa.
+    </div>
     <a href="https://form.jotform.com/252165158107050" class="cta">Quero minha organização gratuita</a>
-
+    
+    <!-- Sessão O que fazemos -->
     <section class="features">
       <h2>O que fazemos</h2>
-      <p>Somos especialistas em organização e alívio financeiro. Entregamos um diagnóstico gratuito, com projeções reais de economia, plano de reestruturação e acompanhamento humano e acessível.</p>
+      <p class="section-description">Somos especialistas em organização e alívio financeiro. Entregamos um diagnóstico gratuito, com projeções reais de economia, plano de reestruturação e acompanhamento humano e acessível.</p>
       <div class="cards">
         <div class="card"><h3>Diagnóstico gratuito</h3><p>Mostramos onde o dinheiro está sendo perdido.</p></div>
         <div class="card"><h3>Plano personalizado</h3><p>Metas práticas, renegociações e cortes inteligentes.</p></div>
@@ -209,7 +313,28 @@
         <div class="card"><h3>Educação e crédito</h3><p>Reconstrução de crédito e hábitos financeiros.</p></div>
       </div>
     </section>
-
+    <!-- Impacto/contador -->
+    <section class="counter">
+      <h2>Nosso Impacto</h2>
+      <p class="section-description">
+        Estamos combatendo o endividamento e ajudando famílias a retomarem o controle. Usamos a economia gerada para financiar nossa atuação.
+      </p>
+      <div class="counter-numbers">
+        <div class="counter-item">
+          <h3>+70%</h3>
+          <p>dos brasileiros estão endividados</p>
+        </div>
+        <div class="counter-item">
+          <h3>+500</h3>
+          <p>Pessoas já orientadas</p>
+        </div>
+        <div class="counter-item">
+          <h3>R$1.200</h3>
+          <p>Economia média por pessoa</p>
+        </div>
+      </div>
+    </section>
+    <!-- Como funciona -->
     <section class="steps">
       <h2>Como Funciona</h2>
       <div class="step"><div class="step-number">1</div><div class="step-content"><h3>Diagnóstico gratuito</h3><p>Preencha o formulário e veja quanto pode economizar.</p></div></div>
@@ -217,7 +342,7 @@
       <div class="step"><div class="step-number">3</div><div class="step-content"><h3>Consultoria mensal</h3><p>Acompanhamento para manter o foco e ajustar rumos.</p></div></div>
       <div class="step"><div class="step-number">4</div><div class="step-content"><h3>Assinatura leve</h3><p>A partir de R$49/mês. Só paga se economizar.</p></div></div>
     </section>
-
+    <!-- Planos -->
     <section class="plans">
       <h2>Planos de Assinatura</h2>
       <div class="cards">
@@ -253,7 +378,7 @@
         </div>
       </div>
     </section>
-
+    <!-- Garantia -->
     <section class="guarantee">
       <img src="garantia7dias.png" alt="Garantia de 7 dias">
       <div class="guarantee-text">
@@ -262,16 +387,24 @@
         <a href="https://form.jotform.com/252165158107050" class="cta">Começar agora sem risco</a>
       </div>
     </section>
-
+    <!-- FAQ -->
     <section class="faq">
       <h2>Perguntas Frequentes</h2>
-      <p>Esclareça suas dúvidas antes de começar.</p>
+      <p class="section-description">Esclareça suas dúvidas antes de começar.</p>
       <details><summary>O diagnóstico realmente não tem custo?</summary><p>Sim. Você preenche o formulário e recebe a análise inicial de forma 100% gratuita.</p></details>
       <details><summary>Preciso pagar mesmo sem economizar?</summary><p>Não. Só cobramos se houver economia real. E o valor começa em R$49/mês.</p></details>
       <details><summary>Vocês ajudam a renegociar minhas dívidas?</summary><p>Sim. Nossa consultoria inclui estratégias de renegociação e reconstrução do seu crédito.</p></details>
       <details><summary>Qual o nível de personalização?</summary><p>Total. A proposta é feita com base nas suas metas, renda, despesas e contexto atual.</p></details>
     </section>
   </div>
+  <footer style="width:100%; text-align:center; color:#6B7280; font-size:0.98rem; margin-top:2.5rem; padding:2rem 0 0 0;">
+    © 2025 LegacyFinance. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
+
+  </div>
+</body>
+</html>
+
 
