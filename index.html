@@ -63,23 +63,23 @@
       margin-top: 0;
     }
     .cta {
-      background: linear-gradient(to right, #10B981, #3B82F6);
-    color: white;
-    padding: 0.6rem 1.1rem; /* Botão mais compacto */
-    font-size: 1.05rem;
-    border: none;
-    border-radius: 999px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 700;
-    display: flex;
-    margin-top: 0.4rem;
-    margin-bottom: 0.8rem;
-    min-width: unset;
-    width: auto;
-      max-width: 100%;
-      box-sizing: border-box;
-      transition: background 0.3s, transform 0.2s;
+  display: inline-block; /* Ou 'inline-flex' */
+  width: auto;           /* NÃO coloque width: 100% */
+  min-width: unset;      /* Remove min-width caso esteja herdando */
+  max-width: 100%;       /* Opcional, previne crescer demais */
+  background: linear-gradient(to right, #10B981, #3B82F6);
+  color: white;
+  padding: 0.65rem 1.2rem;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 1px 6px 0 #0001;
+  margin: 0.4rem 0 0 0;  /* Top only, remove margin-left/right */
+  transition: background 0.2s;
+
     }
     .cta:hover {
       background: linear-gradient(to right, var(--secondary), var(--primary));
