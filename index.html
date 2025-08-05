@@ -37,7 +37,7 @@
       font-size: 2.2rem;
       font-weight: 800;
       color: var(--neutral-dark);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.1rem;
     }
     .logo span {
       color: var(--primary);
@@ -45,13 +45,13 @@
     .slogan {
       font-size: 1rem;
       color: var(--neutral-light);
-      margin: 0.4rem 0 0.6rem 0;;
+      margin: 0.2rem 0 0.4rem 0;;
     }
     .headline {
       font-size: 2.4rem;
       font-weight: 700;
       color: var(--neutral-dark);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.15rem;
       margin-top: 2rem;
       line-height: 1.2;
     }
@@ -59,27 +59,27 @@
       font-size: 1.1rem;
       color: var(--neutral-medium);
       max-width: auto;
-      margin-bottom: 0.8rem;
-      margin-top: 0;
+      margin-bottom: 0rem;
+      margin-top: 0.2;
     }
     .cta {
-  display: inline-block; /* Ou 'inline-flex' */
-  width: auto;           /* NÃO coloque width: 100% */
-  min-width: unset;      /* Remove min-width caso esteja herdando */
-  max-width: 100%;       /* Opcional, previne crescer demais */
-  background: linear-gradient(to right, #10B981, #3B82F6);
-  color: white;
-  padding: 0.65rem 1.2rem;
-  font-size: 1.05rem;
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: 700;
-  text-align: center;
-  box-shadow: 0 1px 6px 0 #0001;
-  margin: 0.4rem 0 0 0;  /* Top only, remove margin-left/right */
-  transition: background 0.2s;
-
+      background: linear-gradient(to right, #10B981, #3B82F6);
+    color: white;
+    padding: 0.6rem 1.1rem; /* Botão mais compacto */
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: -3rem;
+    margin-bottom: 6rem;
+    min-width: unset;
+    width: auto;
+      max-width: 100%;
+      box-sizing: border-box;
+      transition: background 0.3s, transform 0.2s;
     }
     .cta:hover {
       background: linear-gradient(to right, var(--secondary), var(--primary));
@@ -131,7 +131,7 @@
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 2rem;
+      margin-top: 4rem;
     }
     .counter-item {
       background: white;
@@ -152,7 +152,7 @@
       color: var(--neutral-medium);
     }
     .steps {
-      margin-top: 2rem;
+      margin-top: 4rem;
       margin-bottom: 2rem;
     }
     .steps .step {
@@ -176,7 +176,7 @@
       justify-content: center;
       font-size: 1rem;
       flex-shrink: 0;
-      margin-top: 3px;
+      margin-top: 4px;
     }
     .step-content h3 {
       font-size: 1.08rem;
@@ -189,10 +189,10 @@
       color: var(--neutral-medium);
     }
     .plans {
-      margin-top: 2rem;
+      margin-top: 4rem;
     }
     .plans .cards {
-      margin-top: 1.3rem;
+      margin-top: 4rem;
     }
     .plan-tier {
       background: white;
@@ -233,7 +233,7 @@
       border-radius: 1rem;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 2rem;
+      margin-top: 4rem;
     }
     .guarantee img {
       width: 110px;
@@ -249,7 +249,7 @@
       margin-bottom: 1rem;
     }
     .faq {
-      margin-top: 2.5rem;
+      margin-top: 4rem;
     }
     .faq details {
       background: white;
@@ -265,7 +265,7 @@
       outline: none;
     }
     .faq p {
-      margin-top: 0.5rem;
+      margin-top: 4rem;
       text-align: left;
       color: var(--neutral-medium);
     }
@@ -293,13 +293,17 @@
 <body>
   <div class="container">
     <!-- Topo -->
-    <div class="logo">LEGACY<span>FINANCE</span></div>
-    <div class="slogan">saúde financeira, paz familiar</div>
+<div class="header-group">
+  <div class="logo">LEGACY<span>FINANCE</span></div>
+  <div class="slogan">saúde financeira, paz familiar</div>
+</div>
     <div class="headline">Reorganize sua vida financeira<br> com a ajuda certa</div>
     <div class="subheadline">
       Diagnóstico gratuito e acompanhamento personalizado para você sair do vermelho, organizar suas contas e investir no que importa.
     </div>
-    <a href="https://form.jotform.com/252165158107050" class="cta">Quero minha organização gratuita</a>
+<div style="width:100%;text-align:center;">
+  <a href="https://form.jotform.com/252165158107050" class="cta">Quero minha organização gratuita</a>
+</div>
     
     <!-- Sessão O que fazemos -->
     <section class="features">
@@ -406,5 +410,3 @@
   </div>
 </body>
 </html>
-
-
